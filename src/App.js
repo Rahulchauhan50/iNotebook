@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import Login from './pages/Login';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Signup from './pages/Signup';
+import Home from './pages/Home';
+
 
 function App() {
+  const { UserDetails } = useSelector((state) => state.UserAuth);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg-slate-800'>
+       <Routes> 
+          <Route eexat path='/' element={<Home/>} ></Route>
+          <Route eexat path='/login' element={<Login/>} ></Route>
+          <Route eexat path='/signup' element={<Signup/>} ></Route>
+        </Routes>
     </div>
   );
 }
