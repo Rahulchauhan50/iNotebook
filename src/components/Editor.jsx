@@ -30,7 +30,7 @@ const Editor = () => {
       }
     })
     .catch((error) => {
-      console.error('Error Authenicationg user');
+      console(error);
     });
   }
 
@@ -55,19 +55,16 @@ const Editor = () => {
     if(command==='bold'){
         document.execCommand('bold');
         setIsBold(!isBold);
-        console.log(isBlue)
         return;
     }
     else if(command==='italic'){
         document.execCommand('italic');
         setIsItalic(!isItalic);
-        console.log(isItalic)
         return;
     }
     else if(command==='underline'){
         document.execCommand('underline');
         setIsUnderline(!isUnderline);
-        console.log(isUnderline)
         return;
     }
     else if(command==="foreColor"){

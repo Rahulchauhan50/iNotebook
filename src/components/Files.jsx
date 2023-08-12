@@ -23,7 +23,6 @@ export default function Files() {
     .then((data) => {
       if (data?.success === true) {
         setNotes(data?.notes)
-        console.log(data?.notes)
       }
     })
     .catch((error) => {
@@ -32,13 +31,11 @@ export default function Files() {
   }
 
   const handleSearchNotes = (value) => {
-    console.log(value)
     const folderName = folder?.replace(/-/g," ")
     fetchSearchNotes({folderName, titleSubstring:value})
     .unwrap()
     .then((data) => {
       if (data?.success === true) {
-        console.log(data?.matchingNotes)
         setNotes(data?.matchingNotes)
       }
     })
@@ -83,7 +80,6 @@ export default function Files() {
         formattedTime.push(`${minutes} minute${minutes > 1 ? 's ago' : ' ago'}`);
     }
 
-    console.log(formattedTime)
     return formattedTime.join(', ')
    
   }

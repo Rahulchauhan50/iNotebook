@@ -15,7 +15,6 @@ export default function Createpopup(){
 
   const handleAddNote = (e) => {
     e.preventDefault();
-    console.log(descriptionRef)
     const title = titleRef.current.value;
     const description = descriptionRef.current.value;
 
@@ -51,7 +50,7 @@ export default function Createpopup(){
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
-          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+          <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -64,7 +63,7 @@ export default function Createpopup(){
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-slate-300 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                
                 <div className="w-full h-full">
-                  <form onSubmit={handleAddNote} className="bg-slate-300 shadow-md rounded px-8 pt-6 mb-4">
+                  <form onSubmit={handleAddNote} className="bg-slate-300 shadow-md rounded px-8 pt-6">
                     <div className="mb-4">
                       <label className="block text-gray-700 text-sm font-bold mb-2" for="text">
                         Title
@@ -80,7 +79,7 @@ export default function Createpopup(){
                       <input required ref={descriptionRef} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Description" />
                     </div>
                     <div className="flex items-center justify-between">
-                      <button type="submit" onClick={handleAddNote} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                      <button type="submit" onClick={handleAddNote} className="mb-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         {
                           addNoteLoading ? <svg className="animate-spin mx-auto w-[45px] -ml-1 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -88,7 +87,7 @@ export default function Createpopup(){
                           </svg> : "Create"
                         }
                       </button>
-                      <button onClick={()=>{dispatch(SetCreate({ open: false, name: null }))}} className="inline-block align-baseline font-bold text-lg text-blue-500 hover:text-blue-800">
+                      <button onClick={()=>{dispatch(SetCreate({ open: false, name: null }))}} className="mb-3 inline-block align-baseline font-bold text-lg text-blue-500 hover:text-blue-800">
                         Cancel
                       </button>
                     </div>

@@ -38,7 +38,6 @@ export default function() {
           .then((data) => {
             if (data?.success === true) {
               setIsError(false)
-              console.log(data)
               dispatch(setUserDetails(data));
               localStorage.setItem("token", data.authToken)
               navigate('/New-Folder/New-note')
@@ -59,14 +58,12 @@ export default function() {
             .unwrap()
             .then((data) => {
               if (data?.success === true) {
-                console.log(data)
                 localStorage.setItem("token", data.authToken)
                 dispatch(setUserDetails(data))
                 navigate('/New-Folder/New-note')
               } else {
                 console.log("user already exist")
               }
-              console.log(data)
             })
             .catch((error) => {
               console.error('Error Authenicationg user', error);

@@ -62,7 +62,7 @@ export default function Example() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <button onClick={()=>{localStorage.clear();dispatch(setUserDetails({}));window.location.href = 'http://localhost:3000/'}} className="bg-transparent text-sm md:flex hidden mx-3 h-8 w-16 hover:bg-blue-500 items-center p-2 text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent rounded">
+              <button onClick={()=>{localStorage.clear();dispatch(setUserDetails({}));window.location.href = 'https://notebook-rahul.netlify.app'}} className="bg-transparent text-sm md:flex hidden mx-3 h-8 w-16 hover:bg-blue-500 items-center p-2 text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent rounded">
                 LogOut
               </button>
                 <button
@@ -119,7 +119,7 @@ export default function Example() {
                       <Menu.Item>
                         {({ active }) => (
                           <div
-                            onClick={()=>{localStorage.clear();dispatch(setUserDetails({}));window.location.href = 'http://localhost:3000/'}}
+                            onClick={()=>{localStorage.clear();dispatch(setUserDetails({}));window.location.href = 'https://notebook-rahul.netlify.app/login'}}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out

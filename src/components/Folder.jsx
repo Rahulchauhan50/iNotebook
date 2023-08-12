@@ -26,7 +26,6 @@ export default function Folder() {
         }
         
         if (document.getElementById(id)) {
-            console.log(document.getElementById(id))
             document.getElementById(id).contentEditable = true;
             const range = document.createRange();
             range.selectNodeContents(document.getElementById(id));
