@@ -1,10 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    UserDetails: "hello world",
-    open:false,
-    create:false,
-    deleteNote:false
+    UserDetails: {},
+    Msg:{
+      open:false,
+      name:null,
+      message:null
+    },
+    Create:{
+      open:false,
+      name:null
+    },
+    Notexist:false
+      
 };
 
 const UserSlice = createSlice({
@@ -14,19 +22,21 @@ const UserSlice = createSlice({
       setUserDetails: (state, action) => {
           state.UserDetails = action.payload?.user
       },
-      setOpen: (state, action) => {
-        state.open = action.payload
+      setNotexist: (state, action) => {
+          state.Notexist = action.payload
       },
-      setCreate: (state, action) => {
-        state.create = action.payload
+      SetMsg: (state, action) => {
+        state.Msg.name = action.payload.name
+        state.Msg.open = action.payload.open
+        state.Msg.message = action.payload.message
       },
-      setDelete: (state, action) => {
-        state.deleteNote = action.payload
-      }
+      SetCreate: (state, action) => {
+        state.Create = action.payload
+      },
 
 }});
 
-export const { setUserDetails, setOpen, setCreate, setDelete} = UserSlice.actions;
+export const { setUserDetails, SetMsg, SetCreate, setNotexist} = UserSlice.actions;
 
 export default UserSlice.reducer;
   

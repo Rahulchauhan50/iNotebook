@@ -1,25 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Navbar from '../components/Navbar'
 import Folder from '../components/Folder'
 import Files from '../components/Files'
 import Editor from '../components/Editor'
 import Createpopup from '../components/Createpopup'
-import { useNavigate } from 'react-router-dom'
+import Deletepopup from '../components/Deletepopup'
+
 
 export default function () {
 
-  const navigate = useNavigate();
-  useEffect(()=>{
-    navigate('/login')
-  },[])
-
   return (
     <div className='min-h-screen '>
-      <div style={{position: "sticky", top:"0px"}}>
+      <div style={{position: "sticky", top:"0px",zIndex:"10"}}>
         <Navbar/>
       </div>
       <div className='absolute'>
       <Createpopup/>
+      <Deletepopup/>
       </div>
       <div className='flex flex-col md:flex-row'>
         <div className='flex flex-col md:flex-row md:w-[50%] w-full'>
